@@ -1,34 +1,22 @@
-<div class="column">
+<div class="column is-one-fifth">
   <div class="card">
+    <% if customer.image.attached? %>
+      <div class="card-image">
+        <figure class="image is-1by1">
+          <%= image_tag(customer.image, alt: "Customer Image", class: "is-rounded") %>
+        </figure>
+      </div>
+    <% end %>
+
     <div class="card-content">
-      <% if horse.image.present? %>
-        <div class="card-image">
-          <figure class="image">
-            <%= imagee_tag(horse.image, size: "16x10", alt: "Customer Image") %>
-          </figure>
-        </div>
-      <% end %>
-      <p class="title">
-        <% if show_link %>
-          <%= link_to customer.name, customer %>
-        <% else %>
-          <%= customer.name %>
-        <% end %>
+      <p class="title is-5 has-text-centered">
+        <%= customer.full_name %><br>
+      </p>
+      <p class="subtitle is-6 m-3">
+        <strong>Phone:</strong> <%= customer.phone_number %><br>
+        <strong>Email:</strong> <%= customer.email_address %><br>
+        <strong>Notes:</strong> <%= customer.notes %>
       </p>
     </div>
-    <footer class="card-footer">
-      <p class="card-footer-item">
-        Name: <br><%= customer.full_name %>
-      </p>
-      <p class="card-footer-item">
-        Phone: <br><%= customer.phone_number %>
-      </p>
-      <p class="card-footer-item">
-        Email: <br><%= customer.email_address %>
-      </p>
-      <p class="card-footer-item">
-        Notes: <br><%= customer.notes %>
-      </p>
-    </footer>
   </div>
 </div>
