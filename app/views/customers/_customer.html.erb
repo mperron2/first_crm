@@ -1,0 +1,34 @@
+<div class="column">
+  <div class="card">
+    <div class="card-content">
+      <% if horse.image.present? %>
+        <div class="card-image">
+          <figure class="image">
+            <%= imagee_tag(horse.image, size: "16x10", alt: "Customer Image") %>
+          </figure>
+        </div>
+      <% end %>
+      <p class="title">
+        <% if show_link %>
+          <%= link_to customer.name, customer %>
+        <% else %>
+          <%= customer.name %>
+        <% end %>
+      </p>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        Name: <br><%= customer.full_name %>
+      </p>
+      <p class="card-footer-item">
+        Phone: <br><%= customer.phone_number %>
+      </p>
+      <p class="card-footer-item">
+        Email: <br><%= customer.email_address %>
+      </p>
+      <p class="card-footer-item">
+        Notes: <br><%= customer.notes %>
+      </p>
+    </footer>
+  </div>
+</div>
